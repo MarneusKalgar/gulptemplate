@@ -1,0 +1,17 @@
+mixin contacts(item)
+	+b.SECTION.contacts(class=item.class)
+		+e.DIV.wrap
+			+e.DIV.content
+				+e.H1.title(class="titles") С нами легко связаться!
+				+e.P.address(class="--color") пр-т Степана Бандеры, 21,
+				+e.P.address Киев, 03186, Украина
+				+e.P.schedule Пн &mdash; Сб,
+					+e.SPAN.strong  с 10:00 по 19:00
+				+e.A.link(class="--tel --single", href="tel:+380937772255") +380 (93) 777 - 22 - 55
+				+e.A.link(class="--tel --single", href="tel:+380937772255") +380 (93) 777 - 22 - 55
+				+e.A.link(class="--mail --single", href="mailto:hello@interact.com") hello@interact.com
+		+e.DIV.map#map
+		//-else
+		//-	+e.A.link(class="--tel", href="tel:+380937772255") +380 (93) 777 - 22 - 55
+		//-	+e.P.desc пр-т Степана Бандеры, 21, Киев, Украина
+		//-	+e.A.link(class="--mail", href="mailto:hello@interact.com") hello@interact.com

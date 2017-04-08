@@ -1,0 +1,20 @@
+/*!******************INDEX******************/
+.index {
+	padding: $base-element-padding 0;
+
+	&__title {
+		font-size: $heading-font-size;
+	}
+
+	&__wrap {
+		position: relative;
+		z-index: 200;
+		max-width: $base-wrap-element-width;
+		margin: 0 auto;
+		@media screen and (max-width: $media-lg) {
+			width: 100%;
+			box-sizing: border-box;
+			padding: 0 1.25em;
+		}
+	}
+}

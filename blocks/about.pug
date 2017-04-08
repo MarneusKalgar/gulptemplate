@@ -1,0 +1,22 @@
+extends template
+
+block content
+	+about()
+
+block scripts
+	// build:js js/main.js
+	script( src="js/main.js")
+	// endbuild
+
+	//-script.
+	//-	$(function() {
+	//-		var options = {
+	//-			panel: $(".vacancies__panel"),
+	//-			control: $(".vacancies__control"),
+	//-			content: $(".vacancies__content")
+	//-		};
+//-
+	//-		$(".vacancies__accordion").accordionModule(options);
+//-
+	//-		$(".order-form").formValidation();
+	//-	});

@@ -1,0 +1,240 @@
+/*!******************SERVICES******************/
+.services {
+	padding: 0;
+	font-size: $base-font-size * 1.125;
+
+	&__wrap {
+		position: relative;
+		z-index: 200;
+		max-width: $base-wrap-element-width;
+		margin: 0 auto;
+		@media screen and (max-width: $media-lg) {
+			width: 100%;
+			box-sizing: border-box;
+			padding: 0 1.25em;
+		}
+		
+		&--grad {
+			padding-bottom: $base-element-padding * 2;
+		}
+	}
+
+	&__section-title {
+		position: relative;
+		z-index: 300;
+		margin: 0;
+		font-size: $heading2-font-size;
+		color: $base-text-color;
+
+		&--light {
+			color: $base-color-white;
+		}
+		@media screen and (max-width: $media-xs) {
+			font-size: $heading2-font-size * .8;
+		}
+	}
+
+	&__hero {
+		position: relative;
+		z-index: -1;
+		padding: 2 * $base-element-padding 0 2.8 * $base-element-padding;
+		text-align: center;
+		background: url("../img/services/services-hero-bg.svg") 0 0 no-repeat;
+		background-size: cover;
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 0;
+			background: rgba(255,255,255, .85);
+		}
+	}
+
+	&__title {
+		position: relative;
+		z-index: 100;
+		box-sizing: border-box;
+		padding: 0 .5em;
+	}
+
+	&__lead {
+		position: relative;
+		z-index: 100;
+		width: 30em;
+		margin: 1em auto 0;
+		@media screen and (max-width: $media-xs) {
+			box-sizing: border-box;
+			width: 100%;
+			padding: 0 1.25em;
+		}
+	}
+
+	&__advert {
+		position: relative;
+		padding: $base-element-padding 0 $base-element-padding * 2;
+		color: $base-color-white;
+		background: url("../img/services/services-advert-bg.jpg") 0 60% no-repeat;
+		background-size: cover;
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba($base-text-color, .9);
+		}
+	}
+
+	&__advert-list {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		height: 14em;
+		margin: $base-element-padding * .5 -25px 0;
+		padding: 0;
+		list-style: none;
+		counter-reset: myCounter;
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			height: 100%;
+			width: 1px;
+			background-color: #515151;
+		}
+		&::before {
+			left: 25px;
+		}
+		&::after {
+			left: 50%;
+		}
+		@media screen and (max-width: $media-lg) {
+			height: auto;
+			align-items: flex-start;
+			&::after,
+			&::before {
+				display: none;
+			}
+		}
+	}
+
+	&__advert-item {
+		position: relative;
+		box-sizing: border-box;
+		@include col-6();
+		@include col-lg-9();
+		@include col-md-12();
+		min-height: 3em;
+		margin: 25px;
+		padding-left: 8.3em;
+		&::before {
+			counter-increment: myCounter;
+			content: counter(myCounter, decimal-leading-zero);
+			position: absolute;
+			left: .8em;
+			top: 0;
+			color: $base-color-red;
+			font-weight: bold;
+			font-size: $heading-font-size;
+			line-height: 1;
+		}
+		@media screen and (max-width: $media-md) {
+			padding-left: 5em;
+			&::before {
+				left: 0;
+			}
+		}
+		@media screen and (max-width: $media-sm) {
+			padding-left: 4em;
+			&::before {
+				font-size: $heading-font-size * .8;
+			}
+		}
+	}
+
+	&__communication {
+		position: relative;
+		&::before {
+			content: "";
+			position: absolute;
+			right: 5em;
+			top: 0;
+			z-index: 200;
+			width: 800px;
+			height: 100%;
+			max-height: 31.5em;
+			opacity: .8;
+			background: url("../img/order-form/form-bg.jpg") 0 0 no-repeat;
+			background-size: cover;
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 90%;
+			height: 100%;
+			max-height: 31.5em;
+			background-image: linear-gradient(to right, #fff, #f5f5f5);
+		}
+		@media screen and (max-width: $media-md) {
+			background-image: linear-gradient(to right, #fff, #f5f5f5);
+			&::before,
+			&::after {
+				display: none;
+			}
+		}
+	}
+
+	&__form {
+		position: relative;
+		width: 30.5em;
+		@media screen and (max-width: $media-sm) {
+			box-sizing: border-box;
+			width: 100%;
+		}
+	}
+
+	&__team {
+		margin-top: 2 * $base-element-padding;
+		@media screen and (max-width: $media-xs) {
+			margin-top: $base-element-padding;
+		}
+	}
+
+	&__sertificates {
+		padding-bottom: 2 * $base-element-padding;
+	}
+
+	&__sertificates-list {
+		@include row-flex();
+		@include justify-content(space-between);
+		@include justify-content-md(center);
+		margin: 2em -25px 0;
+		padding: 0 $base-element-padding * .5;
+		list-style: none;
+	}
+
+	&__sertificates-item {
+		@include col-3();
+		min-width: 8.3333333em;
+		max-height: 11.6666667em;
+		margin: 25px;
+	}
+
+	&__sertificates-img {
+		display: block;
+		max-width: 8.3333333em;
+		max-height: 11.6666667em;
+		margin: 0 auto;
+		border: 1px solid $base-color-grey;
+		box-shadow: .2em .2em .5em .1em rgba($base-color-grey, .5);
+	}
+}

@@ -1,0 +1,117 @@
+include _assets/bemto/bemto
+- set_bemto_settings({ modifier: "--" })
+
+include head/head
+
+include logo/logo
+include menu-btn/menu-btn
+include main-nav/main-nav
+include scroll-to-top/scroll-to-top
+
+include index/index
+include about/about
+include services/services
+include contacts/contacts
+include footer/footer
+
+
+doctype html
+html(lang="ru")
+
+	block head
+		head
+			+head({
+				"title": "Студия Interact Agency",
+				"author": "Interact Agency",
+				"description": "Interact Agency"
+			})
+
+	+b.BODY.page
+		+e.DIV.wrap(class="animsition")
+			+b.HEADER.header#header
+				+e.DIV.wrap
+					// block logo
+					+logo({
+						"id": "logo",
+						"class": "logo",
+						"href": "#",
+						"set": "img/logo/interact-logo@2.png",
+						"src": "img/logo/interact-logo.png",
+						"alt": "Лого студии Interact Agency"
+					})
+					// end block logo
+
+					block main-nav
+						//block main-nav
+						+main-nav([
+							{"class": "main-nav__link", "link": "index.html", "title": "главная"},
+							{"class": "main-nav__link", "link": "about.html", "title": "о нас"},
+							{"class": "main-nav__link", "link": "services.html", "title": "услуги"},
+							{"class": "main-nav__link", "link": "contacts.html", "title": "контакты"},
+						])
+						//end block main-nav
+
+					// block menu-btn
+					+menu-btn()
+					// end block menu-btn
+
+			block content
+				div content
+
+			block footer
+				+footer({"class": "wow"})
+
+			//-block scroll
+			//-	+scroll-to-top({
+			//-		"class": "page__scrollTop",
+			//-		"link": "#header"
+			//-	})
+
+		block vendors
+			// build:js js/vendor.js
+			script( src="libs/jquery/dist/jquery.min.js")
+			//-script( src="libs/animsition/dist/js/animsition.min.js")
+			script( src="libs/jquery.maskedinput/dist/jquery.maskedinput.min.js")
+			script( src="libs/jquery-validation/dist/jquery.validate.min.js")
+			//-script( src="libs/wow/dist/wow.min.js")
+			//-script( src="libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js")
+			// endbuild
+
+		block scripts
+			// build:js js/main.js
+			script( src="js/main.js")
+			// endbuild
+
+			//-script.
+				$('.animsition').animsition({
+					inClass: 'fade-in',
+					outClass: 'fade-out',
+					inDuration: 500,
+					outDuration: 500,
+					linkElement: '.animsition-link',
+					// e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
+					loading: true,
+					loadingParentElement: 'body', //animsition wrapper element
+					loadingClass: 'animsition-loading',
+					loadingInner: '', // e.g '<img src="loading.svg" />'
+					timeout: false,
+					timeoutCountdown: 1000,
+					onLoadEvent: true,
+					browser: ['animation-duration', '-webkit-animation-duration'],
+					// "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+					// The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+					overlay: false,
+					overlayClass: 'animsition-overlay-slide',
+					overlayParentElement: 'body',
+					transition: function (url) {
+						window.location.href = url;
+					}
+				});
+
+		//-block navscripts
+		//-	script.
+		//-		$(function() {
+		//-			$(".main-nav").subMenuToggler();
+
+		//-			$("#menuBtn").topMenuToggler();
+		//-		});

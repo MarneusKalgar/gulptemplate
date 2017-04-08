@@ -1,0 +1,68 @@
+extends template
+
+block content
+	+services()
+	+contacts({"class": "wow"})
+
+block footer
+	+footer({"class": "--isContacts"})
+		+e.DIV.wrap(class="--isContacts")
+			+e.UL.socials
+				+e.item: +e.link(href="https://facebook.com", target="_blank") Facebook
+				+e.item: +e.link(href="https://vk.com", target="_blank") Vkontakte
+				+e.item: +e.link(href="https://twitter.com", target="_blank") Twitter
+			+e.P.copy &copy; Interact, 2017
+
+block scripts
+	// build:js js/main.js
+	script( src="js/main.js")
+	// endbuild
+
+	script.
+		$(function() {
+			var options = {
+				panel: $(".programs__item"),
+				control: $(".programs__control"),
+				content: $(".programs__content")
+			};
+
+			$(".programs__container").accordionModule(options);
+
+			var options2 = {
+				ppc: {
+					speed: 4, value: 5, intensity: 5, lead: 8
+				},
+
+				smm: {
+					speed: 4, value: 5, intensity: 3, lead: 8
+				},
+
+				email: {
+					speed: 6, value: 7, intensity: 5, lead: 4
+				},
+
+				analitycs: {
+					speed: 3, value: 4, intensity: 7, lead: 4
+				},
+
+				youtube: {
+					speed: 2, value: 6, intensity: 3, lead: 9
+				}
+			}
+
+			$(".comparison__tabs").servicesChart(options2);
+
+			$(".order-form").formValidation();
+		});
+
+	script.
+		function initMap () {
+			var options = {
+				element: "map",
+				lat: 50.489774,
+				lng: 30.492945
+			}
+			$("#map").googleMapSetter(options);
+		}
+
+	script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA94SygHVqiUvB_XiNc7hfyAJuG6B7kpfg&callback=initMap")

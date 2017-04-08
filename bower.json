@@ -1,0 +1,26 @@
+{
+  "name": "gulptemplate",
+  "description": "gulptemplate",
+  "main": "index.js",
+  "authors": [
+    "Igor Chernobay <marneus.kalgar90@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "animsition": "^4.0.2",
+    "jquery.maskedinput": "^1.4.1",
+    "jquery-validation": "^1.16.0",
+    "animate.css": "^3.5.2",
+    "wow": "wowjs#^1.1.2",
+    "malihu-custom-scrollbar-plugin": "^3.1.5"
+  }
+}

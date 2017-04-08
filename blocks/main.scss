@@ -1,0 +1,32 @@
+//*********************************************
+//		Assets
+//*********************************************
+@import "_base/normalize";
+@import "_base/variables";
+@import "_base/fonts";
+@import "_assets/input-range-scss-master/_inputrange";
+@import "_assets/scss/smart-grid";
+
+//*********************************************
+//		Blocks
+//*********************************************
+@import "page/page";
+@import "btn/btn";
+
+@import "header/header";
+@import "logo/logo";
+@import "menu-btn/menu-btn";
+@import "main-nav/main-nav";
+@import "index/index";
+@import "footer/footer";
+@import "scroll-to-top/scroll-to-top";
+
+@import "about/about";
+@import "contacts/contacts";
+@import "order-form/order-form";
+
+
+
+
+
+

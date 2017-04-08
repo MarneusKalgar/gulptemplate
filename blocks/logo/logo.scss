@@ -1,0 +1,18 @@
+/*!******************LOGO******************/
+.logo {
+	position: relative;
+	z-index: 200;
+	display: block;
+	width: 12.5em;
+	height: 3.125em;
+	margin: 0;
+	opacity: 1;
+	transition: all .4s ease;
+
+	&__img {
+		display: block;
+		max-width: 100%;
+		height: auto;
+	}
+
+}

@@ -1,0 +1,26 @@
+extends template
+
+block content
+	+index()
+	+contacts({"class": "wow"})
+
+
+block footer
+	+footer({"class": "wow"})
+
+block scripts
+	// build:js js/main.js
+	script( src="js/main.js")
+	// endbuild
+
+	script.
+		function initMap () {
+			var options = {
+				element: "map",
+				lat: 50.489774,
+				lng: 30.492945
+			}
+			$("#map").googleMapSetter(options);
+		}
+
+	script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA94SygHVqiUvB_XiNc7hfyAJuG6B7kpfg&callback=initMap")

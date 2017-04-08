@@ -1,0 +1,144 @@
+/*!******************CONTACTS******************/
+.contacts {
+	position: relative;
+	box-sizing: border-box;
+	height: 47.2222em;
+	padding: $base-element-padding * 2 0;
+	font-size: $base-font-size * 1.125;
+
+	&__wrap {
+		position: relative;
+		z-index: 400;
+		box-sizing: border-box;
+		//max-width: $base-wrap-element-width;
+		width: 100%;
+		margin: 0 auto;
+		padding: 0 2.6%;
+		color: $base-color-white;
+		text-align: left;
+		pointer-events: none;
+		@media screen and (max-width: $media-lg) {
+			width: 100%;
+			box-sizing: border-box;
+			padding: 0 1.25em;
+		}
+	}
+
+	&__content {
+		position: relative;
+		z-index: 500;
+		box-sizing: border-box;
+		//width: 61%;
+		width: 39%;
+		min-width: 29em;
+		//padding: $base-element-padding 4.3%;
+		padding: $base-element-padding 2.5%;
+		overflow: hidden;
+		pointer-events: auto;
+		&::before {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(#363636, .8);
+			filter: blur(2px);
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: -50%;
+			right: -20%;
+			z-index: -1;
+			width: 24em;
+			height: 24em;
+			background: url("../img/contacts/figure.svg") center no-repeat;
+			background-size: contain;
+			opacity: .5;
+		}
+		@media screen and (max-width: $media-md) {
+			width: 100%;
+			padding: $base-element-padding *.5 3%;
+			pointer-events: none;
+			&::before {
+				background-color: rgba(#363636, .5);
+			}
+		}
+		@media screen and (max-width: $media-xs) {
+			min-width: 100%;
+			&::after {
+				display: none;
+			}
+		}
+
+	}
+	
+	&__title {
+		font-size: $heading2-font-size;
+		color: $base-color-white;
+		@media screen and (max-width: $media-xs) {
+			font-size: $heading2-font-size * .8;
+		}
+	}
+
+	&__address {
+		margin: 0;
+		font-style: normal;
+		font-size: $base-font-size * 2.25;
+		@media screen and (max-width: $media-xs) {
+			font-size: $base-font-size * 1.8;
+		}
+		
+		&--color {
+			margin: 1em 0 0;
+			color: $base-color-red;
+		}
+	}
+
+	&__schedule {
+		width: 18em;
+		margin: 1em 0;
+		font-size: $base-font-size * 1.125;
+	}
+
+	&__strong {
+		font-weight: bold;
+	}
+
+	&__link {
+		position: relative;
+		display: block;
+		width: 18em;
+		margin: 4em auto 0;
+		text-decoration: none;
+		color: inherit;
+		pointer-events: auto;
+
+		&--mail {
+			margin-top: 8em;
+			color: $base-color-red;
+		}
+
+		&--single {
+			margin: 0;
+			font-weight: bold;
+			font-size: $base-font-size * 1.125;
+			&:last-child {
+				margin-top: 1em;
+				font-weight: normal;
+			}
+		}
+	}
+
+		//map
+	&__map {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 300;
+		width: 100%;
+		height: 100%;
+	}
+}

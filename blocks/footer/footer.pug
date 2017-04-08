@@ -1,0 +1,11 @@
+mixin footer(item)
+	+b.FOOTER.footer(class=item.class)
+		if block
+			block
+		else
+			+e.DIV.wrap
+				+e.UL.socials
+					+e.item: +e.link(href="https://facebook.com", target="_blank") Facebook
+					+e.item: +e.link(href="https://vk.com", target="_blank") Vkontakte
+					+e.item: +e.link(href="https://twitter.com", target="_blank") Twitter
+				+e.P.copy &copy; Interact, 2017

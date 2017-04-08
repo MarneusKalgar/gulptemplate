@@ -1,0 +1,35 @@
+/*!******************HEADER******************/
+.header {
+	box-sizing: border-box;
+	width: 100%;
+	border-bottom: 1px solid $base-color-grey;
+
+	&__wrap {
+		position: relative;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		width: $base-wrap-element-width;
+		min-height: 9.375em;
+		margin: 0 auto;
+		padding: 0;
+		@media screen and (max-width: $media-lg) {
+			width: 100%;
+			box-sizing: border-box;
+			padding: 0 1.25em;
+		}
+	}
+
+	&__btn {
+		margin: 0 .5em;
+		@media screen and (max-width: $media-xs) {
+			display: none;
+		}
+	}
+
+}
+
+
+
+

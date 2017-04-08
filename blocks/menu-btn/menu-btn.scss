@@ -1,0 +1,75 @@
+/*!******************MENU-BTN******************/
+.menu-btn {
+	display: block;
+	position: relative;
+	z-index: 2000;
+	width: 1.8rem;
+	height: 1.8rem;
+	padding: 0;
+	border: none;
+	background: rgba(0,0,0,0);
+	font-size: 0;
+	-webkit-appearance: none;
+	border-radius: 0;
+	cursor: pointer;
+	transform: translateX(0);
+	transition: transform .3s, opacity .4s ease;
+	&:focus,
+	&:hover {
+		outline: none;
+	}
+	@media screen and (min-width: $media-lg + 1) {
+		display: none;
+	}
+
+	&__barholder {
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 42.2%; //.8rem
+		width: 100%;
+		height: 3px; //.25rem
+		background-color: $base-color-red;
+		transition: background .3s ease .2s;
+		&:before,
+		&:after {
+			position: absolute;
+			display: block;
+			content: '';
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: $base-color-red;
+			transition-duration: .3s, .3s;
+			transition-delay: .2s, 0s;
+		}
+		&:before {
+			top: -300%;
+			transition-property: top, transform;
+		}
+		&:after {
+			bottom: -310%;
+			transition-property: bottom, transform;
+		}
+	}
+
+
+	&--isActive {
+		.menu-btn__barholder {
+			background: none;
+			transition-delay: .2s;
+			&::before {
+				top: 0;
+				transform-origin: 50% 50%;
+				transform: rotate(45deg);
+				//background-color: #fff;
+			}
+			&::after {
+				bottom: 0;
+				transform-origin: 50% 50%;
+				transform: rotate(-45deg);
+				//background-color: #fff;
+			}
+		}
+	}
+}

@@ -1,0 +1,48 @@
+/*******************ABOUT******************/
+.about {
+	padding: 0;
+	color: $base-color-white;
+	text-align: center;
+	font-size: $base-font-size * 1.125;
+
+	&__wrap {
+		max-width: $base-wrap-element-width;
+		margin: 0 auto;
+		@media screen and (max-width: $media-lg) {
+			width: 100%;
+			box-sizing: border-box;
+			padding: 0 1.25em;
+		}
+	}
+
+	&__header {
+		padding: 2.7% 1em 22%;
+		background: $base-bg-color url("../img/about/about-bg.jpg") center no-repeat;
+		background-size: cover;
+	}
+
+	&__lead {
+		width: 39em;
+		margin: 1em auto;
+		font-weight: bold;
+		@media screen and (max-width: $media-md) {
+			width: 90%;
+		}
+	}
+
+	&__text {
+		width: 39em;
+		margin: 1em auto;
+		@media screen and (max-width: $media-md) {
+			width: 90%;
+		}
+	}
+
+	&__team {
+		margin-top: 4.4%;
+	}
+
+	&__vacancies {
+		margin-top: 7%;
+	}
+}
